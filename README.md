@@ -35,6 +35,28 @@ cd FLASK-EMOTION_DETECTION_PROJECT
 </div>
 
 
+#### 1. Clone the repo
+
+<div class="terminal">
+  <div class="terminal-header">
+    <div class="terminal-buttons">
+      <span class="terminal-button red"></span>
+      <span class="terminal-button yellow"></span>
+      <span class="terminal-button green"></span>
+    </div>
+    <button class="copy-btn" onclick="copyCode()">Copy</button>
+  </div>
+  <pre><code>git clone git@github.com:carlos-marin1742/FLASK-EMOTION_DETECTION_PROJECT.git
+cd FLASK-EMOTION_DETECTION_PROJECT</code></pre>
+</div>
+
+<script>
+function copyCode() {
+  const code = `git clone git@github.com:carlos-marin1742/FLASK-EMOTION_DETECTION_PROJECT.git\ncd FLASK-EMOTION_DETECTION_PROJECT`;
+  navigator.clipboard.writeText(code);
+}
+</script>
+
 #### 2. create virtual environment (recommended)
 python3 -m venv venv
 source venv/bin/activate     # On Mac/Linux
