@@ -1,71 +1,96 @@
 # Emotion Detection Flask App
-Flask based web-application that detects emotions in text using IBM's Watson's Natural Language Processing (NLP) API.
 
-This Probject was built as part of the IBM AI Developer Certificate Capstone
+A simple Flask-based web application that detects emotions in text using IBM Watson’s **Natural Language Processing (NLP) API**.  
 
-### Features
- - Detects emotions from user-provided text('joy', 'anger', 'sadness','fear', etc.)
- - REST API endpoint (/emotionDetector) that returns the dominant emotion
- - Web interface served from index.html
- - includes unit texts to validate functionality
+This project was built as part of the [IBM AI Developer Professional Certificate](https://www.coursera.org/professional-certificates/ibm-ai-developer) capstone.
 
- ### Project structure
- FLASK-EMOTION_DETECTION_PROJECT/
+---
 
+## 🚀 Features
+- Detects emotions from user-provided text (`joy`, `anger`, `sadness`, `fear`, `disgust`, etc.)
+- REST API endpoint (`/emotionDetector`) that returns the **dominant emotion**
+- Web interface served from `index.html`
+- Includes unit tests to validate functionality
+
+---
+
+## 📂 Project Structure
+```
+FLASK-EMOTION_DETECTION_PROJECT/
+│
 ├── EmotionDetection/
 │   └── emotion_detection.py     # Emotion detection logic (Watson API wrapper)
-
+│
 ├── server.py                    # Flask web server
-
 ├── test_emotion_detection.py    # Unit tests for emotion detection
-
 ├── requirements.txt             # Python dependencies
-
 └── README.md                    # Project documentation
+```
 
-## Installation & set up
-#### 1. Clone the repo
-git clone git@github.com:carlos-marin1742/FLASK-EMOTION_DETECTION_PROJECT.git
-cd FLASK-EMOTION_DETECTION_PROJECT
+---
 
+## ⚙️ Installation & Setup
 
-<div style="background: #1a1a1a; color: #00ff00; padding: 15px; border-radius: 5px; font-family: 'Courier New', monospace;">
-  <span style="color: #ffff00;">$</span> git clone git@github.com:carlos-marin1742/FLASK-EMOTION_DETECTION_PROJECT.git<br>
-  <span style="color: #ffff00;">$</span> cd FLASK-EMOTION_DETECTION_PROJECT
-</div>
+1. **Clone the repo**  
+   ```bash
+   git clone git@github.com:carlos-marin1742/FLASK-EMOTION_DETECTION_PROJECT.git
+   cd FLASK-EMOTION_DETECTION_PROJECT
+   ```
 
+2. **Create a virtual environment (recommended)**  
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate     # On Mac/Linux
+   venv\Scripts\activate        # On Windows
+   ```
 
-#### 1. Clone the repo
+3. **Install dependencies**  
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-<div class="terminal">
-  <div class="terminal-header">
-    <div class="terminal-buttons">
-      <span class="terminal-button red"></span>
-      <span class="terminal-button yellow"></span>
-      <span class="terminal-button green"></span>
-    </div>
-    <button class="copy-btn" onclick="copyCode()">Copy</button>
-  </div>
-  <pre><code>git clone git@github.com:carlos-marin1742/FLASK-EMOTION_DETECTION_PROJECT.git
-cd FLASK-EMOTION_DETECTION_PROJECT</code></pre>
-</div>
+4. **Run the app**  
+   ```bash
+   python server.py
+   ```
+   Open your browser at 👉 [http://localhost:5000](http://localhost:5000)
 
-<script>
-function copyCode() {
-  const code = `git clone git@github.com:carlos-marin1742/FLASK-EMOTION_DETECTION_PROJECT.git\ncd FLASK-EMOTION_DETECTION_PROJECT`;
-  navigator.clipboard.writeText(code);
-}
-</script>
+---
 
-#### 2. create virtual environment (recommended)
-python3 -m venv venv
-source venv/bin/activate     # On Mac/Linux
-venv\Scripts\activate        # On Windows
+## 🔬 API Usage
 
-#### 3. install dependecies
-pip install -r requirements.txt
+**Endpoint:**  
+```
+GET /emotionDetector?textToAnalyze=<your text>
+```
 
-### 4. run the app. 
-pip install -r requirements.txt
+**Example:**  
+```
+http://localhost:5000/emotionDetector?textToAnalyze=I am so happy and excited today!
+```
 
-Open the browser at  http://localhost:5000
+**Response:**  
+```
+"joy"
+```
+
+---
+
+## 🧪 Running Tests
+Run unit tests with:
+```bash
+python -m unittest test_emotion_detection.py
+```
+
+---
+
+## 📖 Notes
+- This app uses IBM Watson’s **pretrained emotion model** hosted on the Skills Network Labs.
+- If you’re running outside the lab environment, make sure the Watson API endpoint is still accessible.
+
+---
+
+## ✨ Author
+👨‍💻 Carlos Marin  
+- [LinkedIn](https://www.linkedin.com/in/carlos-marin-90482b13b/)  
+- [GitHub](https://github.com/carlos-marin1742)  
